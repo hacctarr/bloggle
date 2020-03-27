@@ -1,0 +1,15 @@
+html
+  include includes/header.pug
+    form(action="/posts" method="POST" enctype="multipart/form-data")
+      ol.list.pl0
+        li.mv3
+          label.f6.b.db.mb2(for="image") Upload an image
+          input.f6.link.dim.br1.ba.b--black-20.ph3.pv2.mb2.dib.black.bg-white.pointer(type="file" name="image")
+          input.f6.link.dim.br1.ba.bw1.ph3.pv2.mb2.dib.black.bg-white.pointer.ml2(type="submit" value="Upload" name="upload")
+        li.mv3
+          label.f6.b.db.mb2(for="description") Write your content here
+          textarea.f4.db.border-box.hover-black.w-100.measure.ba.b--black-20.pa2.br2(rows="10" name="description") #{content || ''}
+          label.f7.db.mb2 Supports basic 
+            a(href='https://www.markdownguide.org/cheat-sheet/', target='_blank') Markdown
+          input.f6.link.dim.br1.ba.bw1.ph3.pv2.mb2.dib.black.bg-white.pointer(type="submit" value="Publish" name="publish")
+    include includes/posts.pug

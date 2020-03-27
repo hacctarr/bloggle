@@ -1,0 +1,9 @@
+if posts.length > 0
+  ul.list.pl0
+    p.f6.b.db.mb2 Posts
+    each post in posts
+      li.mv4.ba.bw2.b--lightest-blue.bg-washed-blue.ph5.pv1
+        p.tr.f6!= post.date
+        p.measure!= post.description
+else
+  p.lh-copy.f6 There are no posts yet.
